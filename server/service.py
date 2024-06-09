@@ -1,9 +1,9 @@
 from pyvis.network import Network
-from . import schemas
+from . import models
 
 
-def visualize_graph_by_adjacency_list(graph: schemas.AdjacencyList) -> str:
-    g = Network(directed=graph.directed, height='98vh')
+def visualize_graph_by_adjacency_list(graph: models.AdjacencyList) -> str:
+    g = Network(directed=graph.directed, height='98vh', cdn_resources='in_line')
     for node in graph.edges.keys():
         color = graph.colors.get(node, graph.default_color)
         label = graph.labels.get(node, str(node))
