@@ -3,7 +3,7 @@ from . import models
 
 
 def visualize_graph_by_adjacency_list(graph: models.AdjacencyList) -> str:
-    g = Network(directed=graph.directed, height='98vh', cdn_resources='remote')
+    g = Network(directed=graph.directed, height='98vh')
     for node in graph.edges.keys():
         color = graph.colors.get(node, graph.default_color)
         label = graph.labels.get(node, str(node))
